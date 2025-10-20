@@ -46,14 +46,14 @@ Các thành viên có thể thiết lập theo **một trong hai cách sau** đ�
    - Tick chọn **Add ESP-IDF to PATH**  
    - Tick chọn **Install Python, Git**
 
-#### Bước 2. Mở đúng terminal ESP-IDF
-Sau khi cài, mở: Start Menu → ESP-IDF 5.3.1 → ESP-IDF 5.3.1 Command Prompt
+#### Bước 2. Mở đúng terminal ESP-IDF  
+Sau khi cài, mở: Start Menu → ESP-IDF 5.3.1 → ESP-IDF 5.3.1 Command Prompt  
 
-#### Bước 3. Kiểm tra môi trường
+#### Bước 3. Kiểm tra môi trường  
 Trong cửa sổ vừa mở, gõ:
 ```bash
-''' idf.py --version '''
-
+idf.py --version
+```
 ---
 
 ### 🔹 Cách 2: Sử dụng Terminal trong VS Code (tích hợp ESP-IDF Extension)
@@ -61,7 +61,7 @@ Trong cửa sổ vừa mở, gõ:
 > Cách này cho phép bạn **build, flash và monitor trực tiếp trong VS Code**, không cần mở Command Prompt riêng.  
 > Phù hợp nếu bạn muốn lập trình trong một IDE duy nhất và thao tác nhanh hơn.
 
-Làm theo hướng dẫn của link:  https://www.youtube.com/watch?si=6yAYuSna5tZOGRqE&v=YK9g9GWQigg&feature=youtu.be
+Làm theo hướng dẫn tại video chính thức của Espressif:  
+🎥 [ESP-IDF Setup in VS Code (Espressif Official)](https://www.youtube.com/watch?v=YK9g9GWQigg&feature=youtu.be)
 
 ---
-
