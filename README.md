@@ -15,7 +15,60 @@ mục tiêu là mô phỏng **cơ chế khóa thông minh**: Hub nhận tín hi�
 - **Cấu trúc phân tầng:** Tách rõ `Driver` / `HAL` / `Service` / `Application`.  
 
 ---
+🛠️ Hướng dẫn tạo và nạp code
+1️⃣ Cài đặt ESP-IDF
 
+Tải và cài đặt ESP-IDF theo hướng dẫn chính thức:
+👉 https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/
+
+Sau khi cài, mở ESP-IDF PowerShell / Terminal và kiểm tra:
+
+idf.py --version
+
+
+Nếu hiện version (ví dụ v5.3) là đã cài đúng.
+
+2️⃣ Tạo project từ GitHub
+
+Clone repo về máy:
+
+git clone https://github.com/Ductin168/BLE-Smart-Hub-Remote.git
+cd BLE-Smart-Hub-Remote
+
+3️⃣ Thiết lập môi trường build
+
+Chạy lệnh:
+
+idf.py set-target esp32
+
+
+👉 Dòng này giúp ESP-IDF hiểu bạn đang build cho chip ESP32 (hoặc esp32s3, esp32c3 nếu dùng loại khác).
+
+4️⃣ Build firmware
+idf.py build
+
+
+ESP-IDF sẽ tự động biên dịch toàn bộ components/ và main/.
+
+5️⃣ Nạp chương trình vào ESP32
+
+Cắm board vào máy tính, xác định cổng COM (Windows) hoặc /dev/ttyUSB0 (Linux).
+Sau đó chạy:
+
+idf.py -p COMx flash
+
+
+(thay COMx bằng cổng thật, ví dụ COM3)
+
+6️⃣ Mở Serial Monitor để xem log
+idf.py monitor
+
+
+Bạn sẽ thấy log BLE scan, pairing, key exchange, và trạng thái relay ngay trên terminal.
+
+⏹ Dừng monitor bằng tổ hợp Ctrl + ]
+
+---
 ## 🧱 Cấu trúc thư mục
 
 ```text
@@ -46,33 +99,11 @@ Copy code
 |           Drivers           | → Code phần cứng cụ thể ESP32
 +-----------------------------+
 👤 Tác giả
-Hồ Đức – Embedded Developer
+Hồ Đức Tín – Embedded Developer
 📍 ESP32 / BLE / Firmware / IoT Systems
 GitHub: https://github.com/Ductin168
 
 📜 Giấy phép
 MIT License – sử dụng tự do cho học tập, nghiên cứu và phát triển sản phẩm.
 
-yaml
-Copy code
-
 ---
-
-✅ **Kết quả sau khi sửa:**  
-- Cấu trúc thư mục hiển thị dưới dạng *khối code đẹp, căn thẳng hàng*  
-- Sơ đồ kiến trúc hiển thị đúng khung ASCII  
-- Không còn dòng “SQL Copy code”  
-- Hiển thị chuẩn trên GitHub, VSCode, hoặc GitLab  
-
----
-
-Bạn chỉ cần:
-1. Mở `README.md`
-2. Xóa đoạn lỗi cũ
-3. Dán đoạn trên vào
-4. Rồi commit lại:
-
-```bash
-git add README.md
-git commit -m "docs: fix markdown display for folder structure and architecture diagram"
-git push origin main
